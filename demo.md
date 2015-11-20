@@ -15,15 +15,13 @@ usemathjax: yes
 [slide]
 
 ![](/images/zb.jpg)
-![](/images/zb.jpg)
-
 
 ##请注意！在下要开始装逼了！！！！
 
 [slide]
 ## 什么是fis？
 
-fis是解决前端开发中
+fis是解决前端开发中以下的问题工具
 ----
 * 自动化工具 {:&.rollIn}
 * 性能优化
@@ -31,44 +29,41 @@ fis是解决前端开发中
 * 开发规范
 * 代码部署
 * 开发流程
- 等问题
+
 
 
 [slide]
-## 基本语法指南
+## gitflow工作流
 ----
-
-<pre><code class="markdown">/* 先写总的配置 */
-title: 这是title，网页名称
-speaker: 演讲者名称
-url: https://github.com/ksky521/nodePPT
-transition: 全局转场动画
-files: 引入的js和css文件，多个以半角逗号隔开
-highlightStyle: 代码高亮样式，默认monokai_sublime
-usemathjax: yes 启用MathJax渲染公式
-
-/* 以&#91;slide&#93; 隔开每个ppt页面 */
-&#91;slide&#93;
-## 二级标题
-这里写内容即可
-
-&#91;slide&#93;
-...
-</code>
-</pre>
+![](/images/gitflow.png)
 
 
-
-[slide style="background-image:url('/img/bg1.png')"]
-
-# 支持单页添加背景图片 {:&.flexbox.vleft}
-## 使用方法：&#91;slide style="background-image:url('/img/bg1.png')"&#93;
 
 
 [slide]
-## 使用LaTex公式：
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}.    s = ut + \frac{1}{2}at^2 $$
-矩阵：\\( x = {\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \end{bmatrix}}  \\)
+
+## 主分支
+
+* master
+* developer
+
+## 辅助分支
+
+* feature
+* release
+* hotfix
+
+[slide]
+## master分支
+>  master分支上存放的应该是随时可供在生产环境中部署的代码（Production Ready state）。当开发活动告一段落，产生了一份新的可供部署的代码时，master分支上的代码会被更新。同时，每一次更新，最好添加对应的版本号标签（TAG）。
+
+[slide]
+## developer分支
+>develop分支是保存当前最新开发成果的分支。通常这个分支上的代码也是可进行每日夜间发布的代码（Nightly build）。因此这个分支有时也可以被称作“integration branch”。
+
+>当develop分支上的代码已实现了软件需求说明书中所有的功能，通过了所有的测试后，并且代码已经足够稳定时，就可以将所有的开发成果合并回master分支了。对于master分支上的新提交的代码建议都打上一个新的版本号标签（TAG），供后续代码跟踪使用。
+
+>因此，每次将develop分支上的代码合并回master分支时，我们都可以认为一个新的可供在生产环境中部署的版本就产生了。通常而言，“仅在发布新的可供部署的代码时才更新master分支上的代码”是推荐所有人都遵守的行为准则。基于此，理论上说，每当有代码提交到master分支时，我们可以使用Git Hook触发软件自动测试以及生产环境代码的自动更新工作。这些自动化操作将有利于减少新代码发布之后的一些事务性工作。
 
 [slide]
 ## 支持.class/#id/自定义属性样式
